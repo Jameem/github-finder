@@ -22,7 +22,7 @@ searchUser.addEventListener('keyup', (e) => {
     timer = setTimeout(async function () {
 
         const response = await fetch(
-            `http://localhost:3000/get-user-profile?user=${text}`
+            `https://github-finder-v1.herokuapp.com/get-user-profile?user=${text}`
         )
 
         var data = await response.json();

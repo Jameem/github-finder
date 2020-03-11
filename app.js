@@ -24,7 +24,7 @@ app.listen(port, () => {
     console.log(`Server is up on port ${port}!`)
 })
 
-app.get("https://github-finder-v1.herokuapp.com/get-user-profile", async (req, res, next) => {
+app.get("/get-user-profile", async (req, res, next) => {
     const clientId = process.env.CLIENT_ID
     const clientSecret = process.env.CLIENT_SECRET
     var searchName = req.query.user
