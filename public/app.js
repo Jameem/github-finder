@@ -1,3 +1,5 @@
+const ui = new UI
+
 //Search input
 const searchUser = document.getElementById('searchUser')
 var timer;
@@ -5,9 +7,15 @@ var x;
 
 searchUser.addEventListener('keyup', (e) => {
     const text = e.target.value
+
+    if (text === '') {
+        ui.clearProfile()
+        return
+    }
+
     if (x) {
         x.abort()
-    } 
+    }
 
     clearTimeout(timer);
 
@@ -18,7 +26,15 @@ searchUser.addEventListener('keyup', (e) => {
         )
 
         var data = await response.json();
-        console.log(data)
+
+        if (data.profile.message === 'Not Found') {
+            ui.showAlert('User not found', 'alert alert-danger mt-3')
+        } else {
+            ui.showProfile(data.profile)
+            ui.showRepos(data.repos)
+            
+        }
+
 
     }, 500);
 })
