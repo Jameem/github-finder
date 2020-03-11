@@ -24,11 +24,12 @@ app.listen(port, () => {
     console.log(`Server is up on port ${port}!`)
 })
 
-app.get("/url", async (req, res, next) => {
+app.get("/get-user-profile", async (req, res, next) => {
     const clientId = process.env.CLIENT_ID
     const clientSecret = process.env.CLIENT_SECRET
+    var searchName = req.query.user
 
-    let url = `https://api.github.com/users/Jameem?client_id=${clientId}&client_secret=${clientSecret}`
+    let url = `https://api.github.com/users/${searchName}?client_id=${clientId}&client_secret=${clientSecret}`
     // res.json(["Tony", "Lisa", "Michael", "Ginger", "Food"]);
     console.log("start")
     const result = await fetch(url, {
@@ -42,7 +43,7 @@ app.get("/url", async (req, res, next) => {
         });
 
         var data = await result.json();
-
+        console.log(data)
         if(data){
             res.json({
                 profile: data
