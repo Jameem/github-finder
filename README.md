@@ -1,6 +1,8 @@
 # github-finder
 Application to search users in github
 
+https://github-finder-v1.herokuapp.com/
+
 ## Dependencies
 
 Install these prerequisites to follow along
