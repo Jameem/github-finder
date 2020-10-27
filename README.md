@@ -1,4 +1,4 @@
-# github-finder
+# Github Finder
 Application to search users in github.
 
 https://github-finder-v1.herokuapp.com/
