@@ -1,5 +1,5 @@
 # Github Finder
-Application to search users in github.
+A simple UI to search user's information on github.
 
 https://github-finder-v1.herokuapp.com/
 
